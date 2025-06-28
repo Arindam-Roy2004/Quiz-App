@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #e0e7ef 0%, #b0c4de 100%);
+            color: #22223b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 400px;
+            padding: 28px 32px;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(44, 62, 80, 0.12);
+            text-align: center;
+        }
+
+        h1,
+        h2 {
+            margin-bottom: 20px;
+            color: #2d5c88;
+            letter-spacing: 1px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background: #f4f8fb;
+            color: #2d5c88;
+            padding: 14px;
+            margin-bottom: 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 1.07rem;
+            box-shadow: 0 2px 8px rgba(44, 62, 80, 0.06);
+            border: 1px solid #e3eaf1;
+            transition: background 0.3s, color 0.3s, border 0.3s;
+        }
+
+        li:hover {
+            background: #2d5c88;
+            color: #fff;
+            border: 1px solid #2d5c88;
+        }
+
+        button {
+            padding: 12px 28px;
+            background: linear-gradient(90deg, #2d5c88 0%, #5fa8d3 100%);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 2px 8px rgba(44, 62, 80, 0.10);
+        }
+
+        button:hover {
+            background: linear-gradient(90deg, #5fa8d3 0%, #2d5c88 100%);
+            color: #fff;
+            transform: translateY(-2px) scale(1.04);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .blink-green {
+            animation: blinkGreen 0.8s;
+        }
+
+        .blink-red {
+            animation: blinkRed 0.8s;
+        }
+
+        @keyframes blinkGreen {
+            0% {
+                background-color: #d4edda;
+            }
+            50% {
+                background-color: #a5d6a7;
+            }
+            100% {
+                background-color: transparent;
+            }
+        }
+
+        @keyframes blinkRed {
+            0% {
+                background-color: #f8d7da;
+            }
+            50% {
+                background-color: #ef9a9a;
+            }
+            100% {
+                background-color: transparent;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Quiz App</h1>
+        <div id="quiz-container">
+            <div id="question-container" class="hidden">
+                <h2 id="question-text"></h2>
+                <ul id="choices-list">
+                    <!-- Choices will be added dynamically here -->
+                </ul>
+                <button id="next-btn" class="hidden">Next Question</button>
+            </div>
+            <div id="result-container" class="hidden">
+                <h2>Your Score:</h2>
+                <p id="score"></p>
+                <button id="restart-btn">Restart Quiz</button>
+            </div>
+            <button id="start-btn">Start Quiz</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
